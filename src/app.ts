@@ -1,23 +1,10 @@
 import * as express from 'express';
-import { Express } from 'express-serve-static-core';
+const app = express();
 
-class App {
-    public express: Express
+app.use('/', (req, res) => {
+    res.json({
+        message: 'Initial Code setup'
+    })
+});
 
-    constructor() {
-        this.express = express()
-        this.mountRoutes()
-    }
-
-    private mountRoutes(): void {
-        const router = express.Router()
-        router.get('/', (req, res) => {
-            res.json({
-                message: 'Initial Code setup'
-            })
-        })
-        this.express.use('/', router)
-    }
-}
-
-export default new App().express
+export default app;

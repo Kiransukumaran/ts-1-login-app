@@ -2,12 +2,12 @@
   "name": "login-app-typescript",
   "version": "1.0.0",
   "description": "Project intended to convert js code to ts",
-  "main": "index.ts",
+  "main": "build/index.ts",
   "scripts": {
     "test": "mocha -r ts-node/register test/**/*.spec.ts",
-    "build": "tsc",
+    "build": "npx tsc",
     "dev": "ts-node-dev ./src/index.ts",
-    "start": "ts-node ./src/index.ts",
+    "start": "ts-node ./build/index.ts",
     "lint": "eslint"
   },
   "repository": {

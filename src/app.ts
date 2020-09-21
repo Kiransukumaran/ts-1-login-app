@@ -1,10 +1,7 @@
 import * as express from 'express';
+import controller from './controllers'
 const app = express();
 
-app.use('/', (req, res) => {
-    res.json({
-        message: 'Initial Code setup'
-    })
-});
+app.use('/', controller);
 
 export default app;

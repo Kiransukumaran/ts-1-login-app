@@ -1,6 +1,5 @@
 import * as fs from 'fs';
 import * as _ from 'lodash';
-import { paramValidation, validateRequests } from '../middlewares';
 import { Router } from 'express';
 
 const router = Router();
@@ -33,7 +32,7 @@ const getUser = async (req: any, res: any, next: any) => {
     }
 }
 
-router.get('/', getAllUsers);
-router.get('/:id', paramValidation(), validateRequests, getUser);
-
-export default router;
+export {
+    getAllUsers,
+    getUser
+};

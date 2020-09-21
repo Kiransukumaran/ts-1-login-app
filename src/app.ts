@@ -1,7 +1,7 @@
 import * as express from 'express';
-import controller from './controllers'
+import routes from './routes'
 const app = express();
 
-app.use('/', controller);
+app.use('/', routes);
 
 export default app;

@@ -2,11 +2,7 @@ import * as fs from 'fs';
 import * as _ from 'lodash';
 import * as jwt from 'jsonwebtoken';
 import * as crypto from 'crypto';
-import { Router } from 'express';
 import dev from '../environments';
-import { loginBodyValidation, validateRequests, validateToken } from '../middlewares';
-
-const router = Router();
 
 const loginUser = async (req, res, next) => {
     try {
@@ -49,7 +45,8 @@ const getProfile = async (req, res, next) => {
     }
 }
 
-router.post('/login', loginBodyValidation(), validateRequests, loginUser);
-router.get('/profile', validateToken, getProfile);
+export {
+    getProfile,
+    loginUser
+}
 
-export default router;
